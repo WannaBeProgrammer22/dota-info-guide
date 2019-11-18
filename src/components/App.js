@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import './styles/App.css';
 import HeroCardList from './HeroCardList';
+import SearchBox from './SearchBox';
 
 class App extends Component {
 
@@ -9,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       heroes: [],
-      teams: []
+      teams: [],
+      searchField: ''
     };
 
   }
@@ -21,7 +23,16 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  onSearchChange = (event) => {
+    this.setState({ searchField: event.target.value });
+  }
+
   render() {
+
+    const filteredHeroes = this.state.heroes.filter(hero => {
+      return hero.localized_name.toLowerCase().includes(this.state.searchField);
+    });
+
     return (
       <div>
         <Navbar>
@@ -29,7 +40,8 @@ class App extends Component {
           <li><a href="/teams">Teams</a></li>
         </Navbar>
         <div className="tc">
-          <HeroCardList heroes={this.state.heroes}></HeroCardList>
+          <SearchBox searchChange={this.onSearchChange} />
+          <HeroCardList heroes={filteredHeroes}></HeroCardList>
         </div>
 
       </div>

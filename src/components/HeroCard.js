@@ -10,7 +10,7 @@ const HeroCard = (props) => {
   };
 
   return (
-    <div className="hero-card shadow-5">
+    <div className="hero-card shadow-5 grow">
       <img src={generateImageLink(localized_name)} alt={localized_name} />
       <div>
         <h2>{localized_name.toUpperCase()}</h2>
