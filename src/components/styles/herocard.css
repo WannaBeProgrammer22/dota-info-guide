@@ -1,0 +1,12 @@
+.hero-card{
+  border: 1px solid black;
+  width: 250px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+}
+
+.hero-card img{
+  width: 250px;
+  height: 100%;
+}

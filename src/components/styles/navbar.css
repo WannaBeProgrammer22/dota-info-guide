@@ -1,0 +1,25 @@
+.navbar{
+  background: rgb(95, 95, 95);
+  color:white;
+  margin: 0;
+  padding: 20px;
+}
+
+.navbar ul{
+  list-style-type: none;
+}
+
+.navbar ul li{
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  padding-bottom: 2px;
+  border-bottom: 1px solid white;
+}
